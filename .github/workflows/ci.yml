@@ -12,9 +12,9 @@ on:
 
 jobs:
   build:
-    uses: ahincho/nova-devops/.github/workflows/reusable-build-maven.yml@main
+    uses: ahincho/nova-shared-02-pipelines/.github/workflows/reusable-build-maven.yml@main
     secrets: inherit
 
   publish-on-tag:
-    uses: ahincho/nova-devops/.github/workflows/publish-on-tag.yml@main
+    uses: ahincho/nova-shared-02-pipelines/.github/workflows/publish-on-tag.yml@main
     secrets: inherit

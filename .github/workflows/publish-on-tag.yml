@@ -34,7 +34,7 @@ jobs:
           head -30 pom.xml
 
       - name: Nova Setup Java
-        uses: ahincho/nova-devops/.github/actions/nova-setup-java@main
+        uses: ahincho/nova-shared-02-pipelines/.github/actions/nova-setup-java@main
         with:
           java-version: '25'
           build-tool: maven
