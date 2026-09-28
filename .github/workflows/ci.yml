@@ -14,7 +14,3 @@ jobs:
   build:
     uses: ahincho/nova-shared-02-pipelines/.github/workflows/reusable-build-maven.yml@main
     secrets: inherit
-
-  publish-on-tag:
-    uses: ahincho/nova-shared-02-pipelines/.github/workflows/publish-on-tag.yml@main
-    secrets: inherit
