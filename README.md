@@ -16,11 +16,11 @@ inherits Java / framework / plugin defaults.
 | Concern | Value |
 |---|---|
 | Java | **25** (records, sealed types, virtual threads, pattern matching) |
-| Quarkus | **3.33.2.1 LTS** (the Nova canonical LTS branch; last stable 3.33.x patch, 2026-06-17) |
+| Quarkus | **3.33.3.3 LTS** (the Nova canonical LTS branch) |
 | Maven Compiler Plugin | 3.14.0 (configured with `--release 25` + `--parameters`) |
 | Maven Surefire Plugin | 3.5.3 (unit tests, JUnit Platform) |
 | Maven Failsafe Plugin | 3.5.3 (integration tests, `*IT.java`) |
-| Quarkus BOM | `io.quarkus.platform:quarkus-bom:3.33.2.1` (pre-imported) |
+| Nova Quarkus BOM | `pe.edu.nova.java:nova-quarkus-bom:2.0.2` (pre-imported; it imports `io.quarkus.platform:quarkus-bom:3.33.3.3` and manages `nova-api-standard-quarkus-extension` 2.0.1) |
 
 ## How to consume
 
@@ -36,7 +36,7 @@ looks like:
     <parent>
         <groupId>pe.edu.nova.java</groupId>
         <artifactId>nova-quarkus-parent</artifactId>
-        <version>1.0.0</version>
+        <version>2.0.0</version>
         <relativePath/>
     </parent>
 
@@ -47,7 +47,7 @@ looks like:
     <properties>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.33.2.1</quarkus.platform.version>
+        <quarkus.platform.version>3.33.3.3</quarkus.platform.version>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
         <compiler-plugin.version>3.14.0</compiler-plugin.version>
     </properties>
@@ -69,12 +69,17 @@ looks like:
 ## Configuration properties (override on child)
 
 - `java.version` — Java source/target/release (default `25`).
-- `quarkus.platform.version` — Quarkus BOM version (default `3.33.2.1`).
+- `quarkus.platform.version` — Quarkus BOM version (default `3.33.3.3`).
 
 ## Distribution
 
 Published to GitHub Packages as
-`pe.edu.nova.java:nova-quarkus-parent:1.0.0`.
+`pe.edu.nova.java:nova-quarkus-parent:2.0.0`.
+
+2.0.0 imports the BOM family with the
+[ADR-039](https://github.com/ahincho/nova-shared-01-docs/blob/main/adrs/shared/ADR-039-nombres-de-artefacto-derivados-del-repositorio.md)
+names: the Quarkus extension is `nova-api-standard-quarkus-extension`, and the
+1.0.x name `nova-quarkus-api-ext` is no longer managed.
 
 ---
 

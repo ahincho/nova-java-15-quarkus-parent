@@ -6,11 +6,11 @@
 
     <groupId>pe.edu.nova.java</groupId>
     <artifactId>nova-quarkus-parent</artifactId>
-    <version>1.0.8</version>
+    <version>2.0.0</version>
     <packaging>pom</packaging>
 
     <name>Nova Platform Quarkus Parent</name>
-    <description>Parent POM for microservice instances built on the Nova Platform meta-framework with Quarkus. Centralizes Java 25, Quarkus 3.33.2.1 LTS, and Maven plugins.</description>
+    <description>Parent POM for microservice instances built on the Nova Platform meta-framework with Quarkus. Centralizes Java 25, Quarkus 3.33.3.3 LTS, and Maven plugins.</description>
 
     <properties>
         <!-- Java -->
@@ -22,7 +22,7 @@
         <!-- Nova Quarkus BOM: single source of truth for Quarkus version +
              internal extensions. Bump this property to roll forward the
              whole Nova Quarkus stack at once. -->
-        <nova-quarkus-bom.version>1.0.2</nova-quarkus-bom.version>
+        <nova-quarkus-bom.version>2.0.2</nova-quarkus-bom.version>
 
         <!-- Plugins -->
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
