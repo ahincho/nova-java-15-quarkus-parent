@@ -85,3 +85,13 @@ jobs:
 
       - name: Publish to GitHub Packages
         run: mvn deploy -DskipTests --no-transfer-progress
+
+      # Un deploy en verde no prueba que el POM se pueda descargar (ADR-039, regla 6).
+      - name: Verify the publication can be downloaded
+        uses: ahincho/nova-shared-02-pipelines/.github/actions/nova-verify-publication@main
+        with:
+          group-id: pe.edu.nova.java
+          artifact-ids: nova-quarkus-parent
+          version: ${{ github.ref_name }}
+          extensions: pom
+          token: ${{ github.token }}
